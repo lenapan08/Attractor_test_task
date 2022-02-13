@@ -10,6 +10,7 @@
 
 Предусловия 
 В окне веб-браузера открыть сайт https://the-internet.herokuapp.com/ 
+
 Шаги 
 1.	Кликнуть  Form Autentification в  списке Availaible Examples.
 2.	В поле Username ввести “tomsmith”
