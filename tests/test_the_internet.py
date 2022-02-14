@@ -4,7 +4,7 @@ import requests
 
 #для запуска тестов в терминале набираем pytest tests
 
-#авто-тест на теск-кейс №1
+#авто-тест на тест -кейс №1
 def test_form_autentification(driver):
     main_page = MainPage(driver)
     main_page.find_click(MainPage.FORM_AUTENTIFICATION)
@@ -16,7 +16,7 @@ def test_form_autentification(driver):
     title = main_page.get_text_of_element(MainPage.HEAD_PAGE_SECURE_AREA)
     assert title == TestData.SECURE_AREA
 
-#авто-тест на теск-кейс №2
+#авто-тест на тест-кейс №2
 def test_drop_list(driver):
     main_page = MainPage(driver)
     main_page.find_click(MainPage.DROPDOWN_LIST)
@@ -27,7 +27,7 @@ def test_drop_list(driver):
     select = main_page.is_visible(MainPage.INPUT_SELECT_OPTION_1)
     assert select == True
 
-#авто-тест на теск-кейс №3
+#авто-тест на тест-кейс №3
 def test_key_presses(driver):
     main_page = MainPage(driver)
     main_page.find_click(MainPage.KEY_PRESSES)
@@ -38,7 +38,7 @@ def test_key_presses(driver):
     result = main_page.get_text_of_element(MainPage.RESULT_INPUT_KEY_PRESSES)
     assert result == TestData.RESULT_INPUT_DATA
 
-#авто-тест на теск-кейс №4
+#авто-тест на тест-кейс №4
 def test_file_download(driver):
     main_page = MainPage(driver)
     main_page.find_click(MainPage.FILE_DOWNLOAD)
@@ -46,9 +46,6 @@ def test_file_download(driver):
     # assert title == True #проверка - попали на страницу DownLoadFile
     requests.get(TestData.BASE_URL + TestData.HREF_FILE)
     my_file = open('details.txt', 'r', encoding='utf8')
-    # for line in my_file:
-    #     if 'ansi' in line:
-    #         print('OK!')
     assert TestData.PART_IN_FILE in my_file
 
 
